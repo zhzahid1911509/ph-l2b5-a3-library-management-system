@@ -84,16 +84,57 @@ export class BorrowController {
   static async getBorrowedBooksSummary(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
       // Aggregation pipeline to get borrowed books summary
+      // const borrowSummary = await Borrow.aggregate([
+      //   {
+      //     // Group by book and sum quantities
+      //     $group: {
+      //       _id: '$book',
+      //       totalQuantity: { $sum: '$quantity' }
+      //     }
+      //   },
+      //   {
+      //     // Lookup book details
+      //     $lookup: {
+      //       from: 'books',
+      //       localField: '_id',
+      //       foreignField: '_id',
+      //       as: 'bookDetails'
+      //     }
+      //   },
+      //   {
+      //     // Unwind the book details array
+      //     $unwind: '$bookDetails'
+      //   },
+      //   {
+      //     // Project only required fields
+      //     $project: {
+      //       _id: 0,
+      //       book: {
+      //         title: '$bookDetails.title',
+      //         isbn: '$bookDetails.isbn'
+      //       },
+      //       totalQuantity: 1
+      //     }
+      //   },
+      //   {
+      //     // Sort by total quantity descending
+      //     $sort: { totalQuantity: -1 }
+      //   }
+      // ]);
       const borrowSummary = await Borrow.aggregate([
         {
-          // Group by book and sum quantities
+          // Convert book string ID to ObjectId for proper join
+          $addFields: {
+            bookObjectId: { $toObjectId: '$book' }
+          }
+        },
+        {
           $group: {
-            _id: '$book',
+            _id: '$bookObjectId',
             totalQuantity: { $sum: '$quantity' }
           }
         },
         {
-          // Lookup book details
           $lookup: {
             from: 'books',
             localField: '_id',
@@ -101,12 +142,8 @@ export class BorrowController {
             as: 'bookDetails'
           }
         },
+        { $unwind: '$bookDetails' },
         {
-          // Unwind the book details array
-          $unwind: '$bookDetails'
-        },
-        {
-          // Project only required fields
           $project: {
             _id: 0,
             book: {
@@ -116,10 +153,7 @@ export class BorrowController {
             totalQuantity: 1
           }
         },
-        {
-          // Sort by total quantity descending
-          $sort: { totalQuantity: -1 }
-        }
+        { $sort: { totalQuantity: -1 } }
       ]);
       
       const response: ApiResponse<IBorrowSummary[]> = {

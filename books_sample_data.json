@@ -1,0 +1,92 @@
+[
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "FICTION",
+    "isbn": "978-0-7432-7356-5",
+    "description": "A classic American novel set in the Jazz Age, exploring themes of wealth, love, and the American Dream.",
+    "copies": 15,
+    "available": true
+  },
+  {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genre": "FICTION",
+    "isbn": "978-0-06-112008-4",
+    "description": "A gripping tale of racial injustice and childhood innocence in the American South.",
+    "copies": 12,
+    "available": true
+  },
+  {
+    "title": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "genre": "SCIENCE",
+    "isbn": "978-0-553-38016-3",
+    "description": "An exploration of cosmology and the nature of time, written for the general public.",
+    "copies": 8,
+    "available": true
+  },
+  {
+    "title": "The Diary of a Young Girl",
+    "author": "Anne Frank",
+    "genre": "BIOGRAPHY",
+    "isbn": "978-0-553-29698-2",
+    "description": "The powerful diary of a Jewish girl hiding during the Holocaust.",
+    "copies": 10,
+    "available": false
+  },
+  {
+    "title": "Sapiens: A Brief History of Humankind",
+    "author": "Yuval Noah Harari",
+    "genre": "HISTORY",
+    "isbn": "978-0-06-231609-7",
+    "description": "An exploration of how Homo sapiens came to dominate the world.",
+    "copies": 20,
+    "available": true
+  },
+  {
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "genre": "FANTASY",
+    "isbn": "978-0-544-00341-5",
+    "description": "An epic fantasy adventure following Frodo's quest to destroy the One Ring.",
+    "copies": 25,
+    "available": true
+  },
+  {
+    "title": "Educated",
+    "author": "Tara Westover",
+    "genre": "BIOGRAPHY",
+    "isbn": "978-0-399-59050-4",
+    "description": "A memoir about education, family, and the struggle for self-invention.",
+    "copies": 14,
+    "available": true
+  },
+  {
+    "title": "The Lean Startup",
+    "author": "Eric Ries",
+    "genre": "NON_FICTION",
+    "isbn": "978-0-307-88789-4",
+    "description": "A methodology for developing businesses and products based on validated learning.",
+    "copies": 18,
+    "available": true
+  },
+  {
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "genre": "FANTASY",
+    "isbn": "978-0-441-17271-9",
+    "description": "A science fiction epic set on the desert planet Arrakis.",
+    "copies": 16,
+    "available": true
+  },
+  {
+    "title": "The World War II",
+    "author": "Winston Churchill",
+    "genre": "HISTORY",
+    "isbn": "978-0-395-41685-4",
+    "description": "Churchill's comprehensive account of World War II from his perspective.",
+    "copies": 7,
+    "available": false
+  }
+]

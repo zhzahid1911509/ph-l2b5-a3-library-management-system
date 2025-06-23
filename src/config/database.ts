@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 export const connectDatabase = async (): Promise<void> => {
   try {
-    const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/library-management';
+    const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/library-management-db';
     
     await mongoose.connect(mongoUri);
     
