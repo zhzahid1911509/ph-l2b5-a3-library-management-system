@@ -26,7 +26,7 @@ A comprehensive Library Management System built with **Express**, **TypeScript**
 
 - Node.js (v16 or higher)
 - MongoDB (local or MongoDB Atlas)
-- npm or yarn
+- npm 
 
 ## ⚡ Quick Start
 
@@ -44,7 +44,7 @@ Create a `.env` file in the root directory:
 
 ```env
 PORT=5000
-MONGODB_URI=mongodb://localhost:27017/library-management
+MONGODB_URI=mongodb+srv://<db_username>:<db_password>@cluster0.egki16d.mongodb.net/<db_name>?retryWrites=true&w=majority&appName=Cluster0
 NODE_ENV=development
 ```
 
@@ -217,19 +217,3 @@ You can test the API using tools like:
 - **Postman**: Import the endpoints and test manually
 - **cURL**: Use command line to test endpoints
 - **Thunder Client** (VS Code extension): Test directly in VS Code
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
-
-**Built with ❤️ using Express, TypeScript, and MongoDB**
